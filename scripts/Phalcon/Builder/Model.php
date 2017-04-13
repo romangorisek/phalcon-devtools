@@ -61,6 +61,10 @@ class Model extends Component
      */
     public function __construct(array $options)
     {
+        //todo; remove
+        echo $options;
+        var_dump($options);
+
         if (!isset($options['name'])) {
             throw new BuilderException('Please, specify the model name');
         }
@@ -91,6 +95,10 @@ class Model extends Component
 
         if ($options['abstract']) {
             $options['className'] = 'Abstract' . $options['className'];
+        }
+
+        if($options['no-schema']) {
+            $options['no-schema'] = true;
         }
 
         parent::__construct($options);

@@ -47,6 +47,8 @@ class AllModels extends Command
             'config=s'    => 'Configuration file [optional]',
             'models=s'    => 'Models directory [optional]',
             'schema=s'    => 'Name of the schema. [optional]',
+            'no-schema=s'     => 'Don not include schema data',
+            'no-validations=s'  => 'Skip phalcon validations',
             'namespace=s' => "Model's namespace [optional]",
             'extends=s'   => 'Models extends [optional]',
             'force'       => 'Force script to rewrite all the models [optional]',
@@ -117,6 +119,10 @@ class AllModels extends Command
             'force' => $this->isReceivedOption('force'),
             'config' => $config,
             'schema' => $this->getOption('schema'),
+
+            'no-schema' => $this->getOption('no-schema'),
+            'no-validations' => $this->getOption('no-validations'),
+            
             'extends' => $this->getOption('extends'),
             'namespace' => $this->getOption('namespace'),
             'directory' => $this->getOption('directory'),
