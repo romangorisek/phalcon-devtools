@@ -194,8 +194,8 @@ class AllModels extends Component
                     'name' => $name,
                     'schema' => $schema,
 
-                    'no-schema' => $this->option('no-schema'),
-                    'no-validations' => $this->options('no-validations'),
+                    'no-schema' => $this->options->get('no-schema'),
+                    'no-validations' => $this->options->get('no-validations'),
 
                     'extends' => $this->options->get('extends'),
                     'namespace' => $this->options->get('namespace'),
