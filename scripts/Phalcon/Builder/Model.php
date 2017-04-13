@@ -62,7 +62,6 @@ class Model extends Component
     public function __construct(array $options)
     {
         //todo; remove
-        echo $options;
         var_dump($options);
 
         if (!isset($options['name'])) {

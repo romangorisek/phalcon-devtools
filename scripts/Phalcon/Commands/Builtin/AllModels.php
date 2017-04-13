@@ -122,7 +122,7 @@ class AllModels extends Command
 
             'no-schema' => $this->getOption('no-schema'),
             'no-validations' => $this->getOption('no-validations'),
-            
+
             'extends' => $this->getOption('extends'),
             'namespace' => $this->getOption('namespace'),
             'directory' => $this->getOption('directory'),
