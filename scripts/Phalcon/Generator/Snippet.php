@@ -139,8 +139,6 @@ EOD;
 
     public function getValidateEmail($fieldName)
     {
-        echo "Try to add e-mail validation: " . $this->options->get('validations') . PHP_EOL;
-
         $templateValidateEmail = <<<EOD
         \$validator->add(
             '%s',

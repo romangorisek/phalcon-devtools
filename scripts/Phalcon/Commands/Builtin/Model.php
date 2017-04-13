@@ -44,8 +44,9 @@ class Model extends Command
     {
         return [
             'name=s'          => 'Table name',
-            'schema=s'        => 'Name of the schema [optional], no-schema to turn this off',
-            'validations=s'   => 'Set to skip if you dont want to add validations',
+            'schema=s'        => 'Name of the schema [optional]',
+            'no-schema'       => 'Don not include schema data',
+            'no-validations'  => 'Skip phalcon validations',
             'namespace=s'     => "Model's namespace [optional]",
             'get-set'         => 'Attributes will be protected and have setters/getters [optional]',
             'extends=s'       => 'Model extends the class name supplied [optional]',
@@ -97,7 +98,9 @@ class Model extends Command
                 'force'             => $this->isReceivedOption('force'),
                 'mapColumn'         => $this->isReceivedOption('mapcolumn'),
                 'abstract'          => $this->isReceivedOption('abstract'),
-                'annotate'          => $this->isReceivedOption('annotate')
+                'annotate'          => $this->isReceivedOption('annotate'),
+                'no-schema'         => $this->isReceivedOption('no-schema'),
+                'no-validations'    => $this->isReceivedOption('no-validations')
             ]
         );
 
