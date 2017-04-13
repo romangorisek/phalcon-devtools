@@ -84,9 +84,6 @@ EOD;
 
     public function getValidationsMethod(array $pieces)
     {
-        // todo: test new option
-        echo "Validations: " . $this->options->get('validations') . PHP_EOL;
-
         $templateValidations = <<<EOD
     /**
      * Validations and business logic

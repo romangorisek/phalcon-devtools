@@ -193,10 +193,8 @@ class AllModels extends Component
                 $modelBuilder = new Model([
                     'name' => $name,
                     'schema' => $schema,
-
                     'no-schema' => $this->options->get('no-schema'),
                     'no-validations' => $this->options->get('no-validations'),
-
                     'extends' => $this->options->get('extends'),
                     'namespace' => $this->options->get('namespace'),
                     'force' => $forceProcess,

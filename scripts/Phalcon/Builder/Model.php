@@ -61,9 +61,6 @@ class Model extends Component
      */
     public function __construct(array $options)
     {
-        //todo; remove
-        var_dump($options);
-
         if (!isset($options['name'])) {
             throw new BuilderException('Please, specify the model name');
         }
@@ -94,10 +91,6 @@ class Model extends Component
 
         if ($options['abstract']) {
             $options['className'] = 'Abstract' . $options['className'];
-        }
-
-        if($options['no-schema']) {
-            $options['no-schema'] = true;
         }
 
         parent::__construct($options);
@@ -233,7 +226,6 @@ class Model extends Component
         }
 
         // Dspot; Do not add setSchema to initialize in Models if no-schema options is set:
-        //echo "no schema: " . $this->options->get('no-schema');
         if ($schema and !$this->options->get('no-schema')) {
             $initialize['schema'] = $this->snippet->getThisMethod('setSchema', $schema);
         }
@@ -382,10 +374,6 @@ class Model extends Component
 
         /* Dspot; do not add validations if validations options is set to skip*/
         $validations = [];
-        // todo; remove
-        //echo "no-validations: ";
-        //var_dump($this->options->get('no-validations'));
-
         if (!$this->options->get('no-validations')) {
             foreach ($fields as $field) {
                 if ($field->getType() === Column::TYPE_CHAR) {
