@@ -45,8 +45,8 @@ class Model extends Command
         return [
             'name=s'          => 'Table name',
             'schema=s'        => 'Name of the schema [optional]',
-            'no-schema'       => 'Don not include schema data',
-            'no-validations'  => 'Skip phalcon validations',
+            'no-schema=s'       => 'Don not include schema data',
+            'no-validations=s'  => 'Skip phalcon validations',
             'namespace=s'     => "Model's namespace [optional]",
             'get-set'         => 'Attributes will be protected and have setters/getters [optional]',
             'extends=s'       => 'Model extends the class name supplied [optional]',
