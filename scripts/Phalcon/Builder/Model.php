@@ -225,13 +225,10 @@ class Model extends Component
             $schema = Utils::resolveDbSchema($config->database);
         }
 
-        // TODO; test remove
-        echo "Schema is: " . $schema;
         if ($schema) {
-            $initialize['schema'] = $this->snippet->getThisMethod('setSchema', $schema);
+            // Dspot; Do not add setSchema to initialize in Models:
+            //$initialize['schema'] = $this->snippet->getThisMethod('setSchema', $schema);
         }
-        // TODO; test remove
-        echo "Initialize is: " . $initialize['schema'];
 
         $table = $this->options->get('name');
         if ($this->options->get('fileName') != $table && !isset($initialize['schema'])) {
