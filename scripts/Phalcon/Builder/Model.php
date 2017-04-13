@@ -226,7 +226,7 @@ class Model extends Component
         }
 
         // Dspot; Do not add setSchema to initialize in Models if no-schema options is set:
-        echo "no schema: " . $this->options->contains('no-schema');
+        echo "no schema: " . $this->options->get('no-schema');
         if ($schema and !$this->options->contains('no-schema')) {
             $initialize['schema'] = $this->snippet->getThisMethod('setSchema', $schema);
         }
@@ -378,7 +378,7 @@ class Model extends Component
         // todo; remove
         echo "no-validations: ";
 
-        var_dump($this->options->contains('no-validations'));
+        var_dump($this->options->get('no-validations'));
         if (!$this->options->contains('no-validations')) {
             foreach ($fields as $field) {
                 if ($field->getType() === Column::TYPE_CHAR) {

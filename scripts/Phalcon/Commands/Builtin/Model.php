@@ -78,13 +78,11 @@ class Model extends Command
         $fileName = Text::uncamelize($className);
 
         $schema = $this->getOption('schema');
-        $validations = $this->getOptions('validations');
 
         $modelBuilder = new ModelBuilder(
             [
                 'name'              => $name,
                 'schema'            => $schema,
-                'validations'       => $validations,
                 'className'         => $className,
                 'fileName'          => $fileName,
                 'genSettersGetters' => $this->isReceivedOption('get-set'),
@@ -99,8 +97,8 @@ class Model extends Command
                 'mapColumn'         => $this->isReceivedOption('mapcolumn'),
                 'abstract'          => $this->isReceivedOption('abstract'),
                 'annotate'          => $this->isReceivedOption('annotate'),
-                'no-schema'         => $this->isReceivedOption('no-schema'),
-                'no-validations'    => $this->isReceivedOption('no-validations')
+                'no-schema'         => $this->getOption('no-schema'),
+                'no-validations'    => $this->getOption('no-validations')
             ]
         );
 
