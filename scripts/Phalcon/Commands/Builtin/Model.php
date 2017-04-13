@@ -44,7 +44,8 @@ class Model extends Command
     {
         return [
             'name=s'          => 'Table name',
-            'schema=s'        => 'Name of the schema [optional]',
+            'schema=s'        => 'Name of the schema [optional], no-schema to turn this off',
+            'validations=s'   => 'Set to skip if you dont want to add validations',
             'namespace=s'     => "Model's namespace [optional]",
             'get-set'         => 'Attributes will be protected and have setters/getters [optional]',
             'extends=s'       => 'Model extends the class name supplied [optional]',
@@ -76,11 +77,13 @@ class Model extends Command
         $fileName = Text::uncamelize($className);
 
         $schema = $this->getOption('schema');
+        $validations = $this->getOptions('validations');
 
         $modelBuilder = new ModelBuilder(
             [
                 'name'              => $name,
                 'schema'            => $schema,
+                'validations'       => $validations,
                 'className'         => $className,
                 'fileName'          => $fileName,
                 'genSettersGetters' => $this->isReceivedOption('get-set'),
