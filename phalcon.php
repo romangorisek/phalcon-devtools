@@ -40,7 +40,7 @@ use Phalcon\Events\Manager as EventsManager;
 try {
     require dirname(__FILE__) . '/bootstrap/autoload.php';
 
-    $vendor = sprintf('Phalcon DevTools (%s)', Version::get());
+    $vendor = sprintf('*Dspot* Phalcon DevTools (%s)', Version::get());
     print PHP_EOL . Color::colorize($vendor, Color::FG_GREEN, Color::AT_BOLD) . PHP_EOL . PHP_EOL;
 
     $eventsManager = new EventsManager();
