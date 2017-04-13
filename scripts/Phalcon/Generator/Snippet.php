@@ -84,6 +84,9 @@ EOD;
 
     public function getValidationsMethod(array $pieces)
     {
+        // todo: test new option
+        echo "Validations: " . $this->options->get('validations') . PHP_EOL;
+
         $templateValidations = <<<EOD
     /**
      * Validations and business logic
@@ -136,6 +139,8 @@ EOD;
 
     public function getValidateEmail($fieldName)
     {
+        echo "Try to add e-mail validation: " . $this->options->get('validations') . PHP_EOL;
+
         $templateValidateEmail = <<<EOD
         \$validator->add(
             '%s',
